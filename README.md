@@ -85,10 +85,10 @@ recomendado
 
 ### 🔹 Pasos
 # 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/movie-app.git
+git clone git@github.com:JhonGonzales-dev/imdumb_app.git
 
 # 2. Entrar al proyecto
-cd movie-app
+cd imdumb_app
 
 # 3. Instalar dependencias
 flutter pub get
@@ -118,8 +118,8 @@ Este proyecto usa Firebase Remote Config para:
 
 ### Endpoints utilizados
 Ejemplo usando TMDB API
-GET /movie/popular
-GET /movie/top_rated
+- GET /movie/popular
+- GET /movie/top_rated
 
 # Base URL
 https://api.themoviedb.org/3
