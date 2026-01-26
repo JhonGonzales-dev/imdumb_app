@@ -6,6 +6,8 @@ import 'package:imdumb/data/datasources/remote/firebase_remote_datasource.dart';
 import 'package:imdumb/data/datasources/remote/firebase_remote_datasource_impl.dart';
 import 'package:imdumb/data/datasources/remote/movie_remote_datasource_impl.dart';
 import 'package:imdumb/data/repositories/movie_repository_impl.dart';
+import 'package:imdumb/domain/usecases/get_categories_movies.dart';
+import 'package:imdumb/domain/usecases/get_discover_movies.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/datasources/remote/movie_remote_datasource.dart';
@@ -14,6 +16,7 @@ import '../../domain/repositories/config_repository.dart';
 import '../../domain/repositories/movie_repository.dart';
 import '../../domain/usecases/get_app_config.dart';
 import '../../domain/usecases/get_popular_movies.dart';
+import '../../domain/usecases/get_detail_movies.dart';
 
 ///------data sources
 final firebaseRemoteDatasourceProvider =
@@ -48,6 +51,18 @@ final getAppConfigProvider = Provider<GetAppConfig>((ref) {
 });
 final getPopularMoviesProvider = Provider<GetPopularMovies>((ref) {
   return GetPopularMovies(repository: ref.read(movieRepositoryProvider));
+});
+
+final getDetailMovieProvider = Provider<GetDetailMovie>((ref) {
+  return GetDetailMovie(repository: ref.read(movieRepositoryProvider));
+});
+
+final getCategoryMoviesProvider = Provider<GetCategoryMovies>((ref) {
+  return GetCategoryMovies(repository: ref.read(movieRepositoryProvider));
+});
+
+final getDiscoverMoviesProvider = Provider<GetDiscoverMovies>((ref) {
+  return GetDiscoverMovies(repository: ref.read(movieRepositoryProvider));
 });
 
 /// -----Firebase Remote Datasource

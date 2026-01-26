@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:imdumb/domain/entities/movie_category.dart';
 import 'package:imdumb/presentation/providers/movie/movie_state.dart';
-import 'package:imdumb/presentation/widgets/movie_poster.dart';
-
-import '../../domain/entities/movie.dart';
+import '../../core/utils/constant.dart';
+import '../../core/utils/image_utils.dart';
 import '../providers/movie/movie_provider.dart';
 import '../providers/splash/splash_provider.dart';
-import '../widgets/carousel_widget.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -16,29 +16,27 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
-  List<MovieEntity> movieList = [];
+  List<CategoryEntity> categoryList = [];
+
   int currentSlideMovie = 0;
-  PageController pageController = PageController(viewportFraction: 0.7);
+
   @override
   void initState() {
-    ref.read(movieProvider.notifier).load();
+    ref.read(movieProvider.notifier).loadCategoryMovie();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final splashState = ref.watch(splashProvider);
 
     ref.listen<MovieState>(movieProvider, (previous, next) {
       next.maybeWhen(
         orElse: () => {},
-        success: (resp) {
-          setState(() => movieList = resp);
-        },
         changeCurrentSlide: (val) {
           setState(() => currentSlideMovie = val);
         },
+        successCat: (data) => {setState(() => categoryList = data)},
         error: (message) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Error: $message')),
@@ -47,50 +45,60 @@ class _HomePageState extends ConsumerState<HomePage> {
       );
     });
     return Scaffold(
-      appBar: AppBar(
-        title: Text(splashState.maybeWhen(
-          orElse: () => 'IMDUMB',
-          success: (config) => config.initialMessage,
-        )),
-      ),
-      body: movieList.isEmpty
-          ? const Center(child: CircularProgressIndicator())
-          : ListView(
-              children: [
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: size.height * 0.5,
-                  child: Carousel(
-                    controller: pageController,
-                    items: List.generate(movieList.length, (index) {
-                      return MoviePoster(movie: movieList[index]);
-                    }),
-                  ),
+        appBar: AppBar(
+          title: Text(splashState.maybeWhen(
+            orElse: () => 'IMDUMB',
+            success: (config) => config.initialMessage,
+          )),
+        ),
+        body: categoryList.isEmpty
+            ? const Center(child: CircularProgressIndicator())
+            : GridView.builder(
+                padding: const EdgeInsets.all(20),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
                 ),
-                SizedBox(height: size.height * 0.04),
-                Text(
-                  movieList[currentSlideMovie].title,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: Theme.of(context).textTheme.titleSmall,
-                    children: [
-                      const WidgetSpan(
-                        child: Icon(Icons.star, size: 16, color: Colors.amber),
-                        alignment: PlaceholderAlignment.middle,
+                itemCount: categoryList.length,
+                itemBuilder: (context, index) {
+                  final category = categoryList[index];
+                  return InkWell(
+                    onTap: () {
+                      context.pushNamed('movie_discover', extra: category);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        image: DecorationImage(
+                            image: NetworkImage(ImageUtils.posterUrl(
+                                genrePosters[category.name] ?? '')),
+                            fit: BoxFit.cover),
                       ),
-                      const TextSpan(text: ' '),
-                      TextSpan(
-                        text: movieList[currentSlideMovie].rating.toString(),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-    );
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [
+                                Colors.black.withOpacity(0.9),
+                                Colors.transparent,
+                              ],
+                            ),
+                          ),
+                          alignment: Alignment.bottomLeft,
+                          padding: const EdgeInsets.all(12),
+                          child: Text(
+                            category.name,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                    ),
+                  );
+                }));
   }
 }

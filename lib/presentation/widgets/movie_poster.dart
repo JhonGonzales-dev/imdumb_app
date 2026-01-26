@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:imdumb/domain/entities/movie.dart';
-
 import '../../core/utils/image_utils.dart';
 
 class MoviePoster extends StatelessWidget {
-  final MovieEntity movie;
+  final String posterPath;
 
-  const MoviePoster({super.key, required this.movie});
+  const MoviePoster({super.key, required this.posterPath});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class MoviePoster extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
-            image: NetworkImage(ImageUtils.posterUrl(movie.posterPath)),
+            image: NetworkImage(ImageUtils.posterUrl(posterPath)),
             fit: BoxFit.cover),
       ),
     );

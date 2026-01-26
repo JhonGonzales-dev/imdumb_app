@@ -19,6 +19,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
     required TResult Function() loading,
     required TResult Function(int index) changeCurrentSlide,
     required TResult Function(String message) error,
@@ -27,6 +30,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
     TResult? Function()? loading,
     TResult? Function(int index)? changeCurrentSlide,
     TResult? Function(String message)? error,
@@ -35,6 +41,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
     TResult Function()? loading,
     TResult Function(int index)? changeCurrentSlide,
     TResult Function(String message)? error,
@@ -44,6 +53,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
     required TResult Function(_Loading value) loading,
     required TResult Function(_ChangeSlide value) changeCurrentSlide,
     required TResult Function(_Error value) error,
@@ -52,6 +64,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_ChangeSlide value)? changeCurrentSlide,
     TResult? Function(_Error value)? error,
@@ -60,6 +75,9 @@ mixin _$MovieState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
     TResult Function(_Loading value)? loading,
     TResult Function(_ChangeSlide value)? changeCurrentSlide,
     TResult Function(_Error value)? error,
@@ -164,6 +182,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
     required TResult Function() loading,
     required TResult Function(int index) changeCurrentSlide,
     required TResult Function(String message) error,
@@ -175,6 +196,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
     TResult? Function()? loading,
     TResult? Function(int index)? changeCurrentSlide,
     TResult? Function(String message)? error,
@@ -186,6 +210,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
     TResult Function()? loading,
     TResult Function(int index)? changeCurrentSlide,
     TResult Function(String message)? error,
@@ -201,6 +228,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
     required TResult Function(_Loading value) loading,
     required TResult Function(_ChangeSlide value) changeCurrentSlide,
     required TResult Function(_Error value) error,
@@ -212,6 +242,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_ChangeSlide value)? changeCurrentSlide,
     TResult? Function(_Error value)? error,
@@ -223,6 +256,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
     TResult Function(_Loading value)? loading,
     TResult Function(_ChangeSlide value)? changeCurrentSlide,
     TResult Function(_Error value)? error,
@@ -244,6 +280,534 @@ abstract class _Success implements MovieState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessCategoryImplCopyWith<$Res> {
+  factory _$$SuccessCategoryImplCopyWith(_$SuccessCategoryImpl value,
+          $Res Function(_$SuccessCategoryImpl) then) =
+      __$$SuccessCategoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<CategoryEntity> data});
+}
+
+/// @nodoc
+class __$$SuccessCategoryImplCopyWithImpl<$Res>
+    extends _$MovieStateCopyWithImpl<$Res, _$SuccessCategoryImpl>
+    implements _$$SuccessCategoryImplCopyWith<$Res> {
+  __$$SuccessCategoryImplCopyWithImpl(
+      _$SuccessCategoryImpl _value, $Res Function(_$SuccessCategoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessCategoryImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<CategoryEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessCategoryImpl implements _SuccessCategory {
+  const _$SuccessCategoryImpl(final List<CategoryEntity> data) : _data = data;
+
+  final List<CategoryEntity> _data;
+  @override
+  List<CategoryEntity> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'MovieState.successCat(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessCategoryImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCategoryImplCopyWith<_$SuccessCategoryImpl> get copyWith =>
+      __$$SuccessCategoryImplCopyWithImpl<_$SuccessCategoryImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
+    required TResult Function() loading,
+    required TResult Function(int index) changeCurrentSlide,
+    required TResult Function(String message) error,
+  }) {
+    return successCat(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
+    TResult? Function()? loading,
+    TResult? Function(int index)? changeCurrentSlide,
+    TResult? Function(String message)? error,
+  }) {
+    return successCat?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
+    TResult Function()? loading,
+    TResult Function(int index)? changeCurrentSlide,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (successCat != null) {
+      return successCat(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_ChangeSlide value) changeCurrentSlide,
+    required TResult Function(_Error value) error,
+  }) {
+    return successCat(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult? Function(_Error value)? error,
+  }) {
+    return successCat?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (successCat != null) {
+      return successCat(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessCategory implements MovieState {
+  const factory _SuccessCategory(final List<CategoryEntity> data) =
+      _$SuccessCategoryImpl;
+
+  List<CategoryEntity> get data;
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessCategoryImplCopyWith<_$SuccessCategoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessDiscoverImplCopyWith<$Res> {
+  factory _$$SuccessDiscoverImplCopyWith(_$SuccessDiscoverImpl value,
+          $Res Function(_$SuccessDiscoverImpl) then) =
+      __$$SuccessDiscoverImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<MovieDiscoverEntity> data});
+}
+
+/// @nodoc
+class __$$SuccessDiscoverImplCopyWithImpl<$Res>
+    extends _$MovieStateCopyWithImpl<$Res, _$SuccessDiscoverImpl>
+    implements _$$SuccessDiscoverImplCopyWith<$Res> {
+  __$$SuccessDiscoverImplCopyWithImpl(
+      _$SuccessDiscoverImpl _value, $Res Function(_$SuccessDiscoverImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessDiscoverImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<MovieDiscoverEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessDiscoverImpl implements _SuccessDiscover {
+  const _$SuccessDiscoverImpl(final List<MovieDiscoverEntity> data)
+      : _data = data;
+
+  final List<MovieDiscoverEntity> _data;
+  @override
+  List<MovieDiscoverEntity> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'MovieState.successDiscover(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessDiscoverImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessDiscoverImplCopyWith<_$SuccessDiscoverImpl> get copyWith =>
+      __$$SuccessDiscoverImplCopyWithImpl<_$SuccessDiscoverImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
+    required TResult Function() loading,
+    required TResult Function(int index) changeCurrentSlide,
+    required TResult Function(String message) error,
+  }) {
+    return successDiscover(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
+    TResult? Function()? loading,
+    TResult? Function(int index)? changeCurrentSlide,
+    TResult? Function(String message)? error,
+  }) {
+    return successDiscover?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
+    TResult Function()? loading,
+    TResult Function(int index)? changeCurrentSlide,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (successDiscover != null) {
+      return successDiscover(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_ChangeSlide value) changeCurrentSlide,
+    required TResult Function(_Error value) error,
+  }) {
+    return successDiscover(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult? Function(_Error value)? error,
+  }) {
+    return successDiscover?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (successDiscover != null) {
+      return successDiscover(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessDiscover implements MovieState {
+  const factory _SuccessDiscover(final List<MovieDiscoverEntity> data) =
+      _$SuccessDiscoverImpl;
+
+  List<MovieDiscoverEntity> get data;
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessDiscoverImplCopyWith<_$SuccessDiscoverImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessDetailImplCopyWith<$Res> {
+  factory _$$SuccessDetailImplCopyWith(
+          _$SuccessDetailImpl value, $Res Function(_$SuccessDetailImpl) then) =
+      __$$SuccessDetailImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MovieDetailEntity data});
+}
+
+/// @nodoc
+class __$$SuccessDetailImplCopyWithImpl<$Res>
+    extends _$MovieStateCopyWithImpl<$Res, _$SuccessDetailImpl>
+    implements _$$SuccessDetailImplCopyWith<$Res> {
+  __$$SuccessDetailImplCopyWithImpl(
+      _$SuccessDetailImpl _value, $Res Function(_$SuccessDetailImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessDetailImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as MovieDetailEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessDetailImpl implements _SuccessDetail {
+  const _$SuccessDetailImpl(this.data);
+
+  @override
+  final MovieDetailEntity data;
+
+  @override
+  String toString() {
+    return 'MovieState.successDetailMovie(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessDetailImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessDetailImplCopyWith<_$SuccessDetailImpl> get copyWith =>
+      __$$SuccessDetailImplCopyWithImpl<_$SuccessDetailImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
+    required TResult Function() loading,
+    required TResult Function(int index) changeCurrentSlide,
+    required TResult Function(String message) error,
+  }) {
+    return successDetailMovie(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
+    TResult? Function()? loading,
+    TResult? Function(int index)? changeCurrentSlide,
+    TResult? Function(String message)? error,
+  }) {
+    return successDetailMovie?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
+    TResult Function()? loading,
+    TResult Function(int index)? changeCurrentSlide,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (successDetailMovie != null) {
+      return successDetailMovie(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_ChangeSlide value) changeCurrentSlide,
+    required TResult Function(_Error value) error,
+  }) {
+    return successDetailMovie(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult? Function(_Error value)? error,
+  }) {
+    return successDetailMovie?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_ChangeSlide value)? changeCurrentSlide,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (successDetailMovie != null) {
+      return successDetailMovie(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessDetail implements MovieState {
+  const factory _SuccessDetail(final MovieDetailEntity data) =
+      _$SuccessDetailImpl;
+
+  MovieDetailEntity get data;
+
+  /// Create a copy of MovieState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessDetailImplCopyWith<_$SuccessDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -289,6 +853,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
     required TResult Function() loading,
     required TResult Function(int index) changeCurrentSlide,
     required TResult Function(String message) error,
@@ -300,6 +867,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
     TResult? Function()? loading,
     TResult? Function(int index)? changeCurrentSlide,
     TResult? Function(String message)? error,
@@ -311,6 +881,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
     TResult Function()? loading,
     TResult Function(int index)? changeCurrentSlide,
     TResult Function(String message)? error,
@@ -326,6 +899,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
     required TResult Function(_Loading value) loading,
     required TResult Function(_ChangeSlide value) changeCurrentSlide,
     required TResult Function(_Error value) error,
@@ -337,6 +913,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_ChangeSlide value)? changeCurrentSlide,
     TResult? Function(_Error value)? error,
@@ -348,6 +927,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
     TResult Function(_Loading value)? loading,
     TResult Function(_ChangeSlide value)? changeCurrentSlide,
     TResult Function(_Error value)? error,
@@ -433,6 +1015,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
     required TResult Function() loading,
     required TResult Function(int index) changeCurrentSlide,
     required TResult Function(String message) error,
@@ -444,6 +1029,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
     TResult? Function()? loading,
     TResult? Function(int index)? changeCurrentSlide,
     TResult? Function(String message)? error,
@@ -455,6 +1043,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
     TResult Function()? loading,
     TResult Function(int index)? changeCurrentSlide,
     TResult Function(String message)? error,
@@ -470,6 +1061,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
     required TResult Function(_Loading value) loading,
     required TResult Function(_ChangeSlide value) changeCurrentSlide,
     required TResult Function(_Error value) error,
@@ -481,6 +1075,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_ChangeSlide value)? changeCurrentSlide,
     TResult? Function(_Error value)? error,
@@ -492,6 +1089,9 @@ class _$ChangeSlideImpl implements _ChangeSlide {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
     TResult Function(_Loading value)? loading,
     TResult Function(_ChangeSlide value)? changeCurrentSlide,
     TResult Function(_Error value)? error,
@@ -585,6 +1185,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<MovieEntity> data) success,
+    required TResult Function(List<CategoryEntity> data) successCat,
+    required TResult Function(List<MovieDiscoverEntity> data) successDiscover,
+    required TResult Function(MovieDetailEntity data) successDetailMovie,
     required TResult Function() loading,
     required TResult Function(int index) changeCurrentSlide,
     required TResult Function(String message) error,
@@ -596,6 +1199,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<MovieEntity> data)? success,
+    TResult? Function(List<CategoryEntity> data)? successCat,
+    TResult? Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult? Function(MovieDetailEntity data)? successDetailMovie,
     TResult? Function()? loading,
     TResult? Function(int index)? changeCurrentSlide,
     TResult? Function(String message)? error,
@@ -607,6 +1213,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<MovieEntity> data)? success,
+    TResult Function(List<CategoryEntity> data)? successCat,
+    TResult Function(List<MovieDiscoverEntity> data)? successDiscover,
+    TResult Function(MovieDetailEntity data)? successDetailMovie,
     TResult Function()? loading,
     TResult Function(int index)? changeCurrentSlide,
     TResult Function(String message)? error,
@@ -622,6 +1231,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Success value) success,
+    required TResult Function(_SuccessCategory value) successCat,
+    required TResult Function(_SuccessDiscover value) successDiscover,
+    required TResult Function(_SuccessDetail value) successDetailMovie,
     required TResult Function(_Loading value) loading,
     required TResult Function(_ChangeSlide value) changeCurrentSlide,
     required TResult Function(_Error value) error,
@@ -633,6 +1245,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Success value)? success,
+    TResult? Function(_SuccessCategory value)? successCat,
+    TResult? Function(_SuccessDiscover value)? successDiscover,
+    TResult? Function(_SuccessDetail value)? successDetailMovie,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_ChangeSlide value)? changeCurrentSlide,
     TResult? Function(_Error value)? error,
@@ -644,6 +1259,9 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Success value)? success,
+    TResult Function(_SuccessCategory value)? successCat,
+    TResult Function(_SuccessDiscover value)? successDiscover,
+    TResult Function(_SuccessDetail value)? successDetailMovie,
     TResult Function(_Loading value)? loading,
     TResult Function(_ChangeSlide value)? changeCurrentSlide,
     TResult Function(_Error value)? error,

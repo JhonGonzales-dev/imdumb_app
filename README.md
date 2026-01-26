@@ -1,14 +1,15 @@
 
 # 🎬 IMDUMB App (Flutter)
 
-Aplicación móvil desarrollada en *Flutter* que consume una API de películas (TMDB) para mostrar listados de películas populares, mejor valoradas.  
+Aplicación móvil desarrollada en *Flutter* que consume una API de películas (TMDB) para mostrar listados de películas por categoria, mejor valoradas.  
 La app está construida usando *Clean Architecture, manejo de estado con **Riverpod, **Dio* para networking y *Firebase Remote Config* para configuración dinámica.
 
 ---
 
 ## 📌 Resumen del proyecto
 
-- Listado de películas populares
+- Listado de películas por categoria
+- Detalle de películas
 - Renderizado de posters y rating con estrellas
 - Manejo de errores con Either (dartz)
 - Feature flags y mensajes dinámicos desde *Firebase Remote Config*
@@ -118,8 +119,10 @@ Este proyecto usa Firebase Remote Config para:
 
 ### Endpoints utilizados
 Ejemplo usando TMDB API
-- GET /movie/popular
-- GET /movie/top_rated
+- GET /genre/movie/list (listado de categorias)
+- GET /discover/movie (peliculas por categorias)
+- GET /movie/$id (detalle de pelicula)
+
 
 # Base URL
 https://api.themoviedb.org/3
@@ -130,11 +133,12 @@ Se utiliza api_key como query parameter, configurado en DIO
 ### Documentación de principios solid
 
 - get_popular_movies.dart
-- ovie_remote_datasource.dart
+- movie_remote_datasource.dart
 - movie_repository.dart
 
 
 ### Captura
 
-![Popular Movies screenshot](assets/screenshot.png)
-
+![listado de categorias](assets/img1.png)
+![peliculas por categorias](assets/img2.png)
+![detalle de pelicula](assets/img3.png)

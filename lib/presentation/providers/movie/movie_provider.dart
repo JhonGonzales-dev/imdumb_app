@@ -4,5 +4,9 @@ import 'movie_notifier.dart';
 import 'movie_state.dart';
 
 final movieProvider = StateNotifierProvider<MovieNotifier, MovieState>((ref) {
-  return MovieNotifier(ref.read(getPopularMoviesProvider));
+  return MovieNotifier(
+      ref.read(getPopularMoviesProvider),
+      ref.read(getDetailMovieProvider),
+      ref.read(getCategoryMoviesProvider),
+      ref.read(getDiscoverMoviesProvider));
 });

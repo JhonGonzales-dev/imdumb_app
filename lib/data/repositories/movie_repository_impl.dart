@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-
 import 'package:imdumb/core/error/failures.dart';
-
 import 'package:imdumb/domain/entities/movie.dart';
+import 'package:imdumb/domain/entities/movie_category.dart';
+import 'package:imdumb/domain/entities/movies_discover.dart';
 
+import '../../domain/entities/movie_detail.dart';
 import '../../domain/repositories/movie_repository.dart';
 import '../datasources/remote/movie_remote_datasource.dart';
 
@@ -23,13 +24,36 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> getTopRatedMovies() async {
+  Future<Either<Failure, MovieDetailEntity>> getDetailMovie(int id) async {
     try {
-      final movies = await remoteDatasource.getTopRatedMovies();
+      final movie = await remoteDatasource.getDetailMovie(id);
+
+      return Right(movie);
+    } catch (e) {
+      return left(Failure(message: "Error loading detail movie: $e"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CategoryEntity>>> getCategoriesMovies() async {
+    try {
+      final movies = await remoteDatasource.getCategoryMovies();
 
       return Right(movies);
     } catch (e) {
-      return left(Failure(message: "Error loading top rated movies: $e"));
+      return left(Failure(message: "Error loading category movies: $e"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<MovieDiscoverEntity>>> getDiscoverMovies(
+      int id) async {
+    try {
+      final movies = await remoteDatasource.getDiscoverMovies(id);
+
+      return Right(movies);
+    } catch (e) {
+      return left(Failure(message: "Error loading discover movies: $e"));
     }
   }
 }
