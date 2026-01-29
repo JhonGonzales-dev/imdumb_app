@@ -1,0 +1,2 @@
+C:/Users/jgonzalesp/Documents/CODE/imdumb_app/android/app/.cxx/Debug/o6v1d492/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/jgonzalesp/Documents/CODE/imdumb_app/android/app/.cxx/Debug/o6v1d492/x86_64/CMakeFiles/rebuild_cache.dir
