@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "62170079861",
+    "project_id": "imdb-stg",
+    "storage_bucket": "imdb-stg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62170079861:android:9e9ee5ed438f9aae8d4e3c",
+        "android_client_info": {
+          "package_name": "com.example.imdumb.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8Nzy2colkI9SFHF4-GnGYbKdkaBuXfqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

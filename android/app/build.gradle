@@ -34,12 +34,29 @@ android {
         multiDexEnabled true
     }
 
+
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
         }
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        production {
+            dimension "environment"
+            resValue "string", "app_name", "IMDumbPro"
+            applicationIdSuffix ".production"
+        }
+        staging {
+            dimension "environment"
+            resValue "string", "app_name", "IMDumbDemo"
+            applicationIdSuffix ".staging"
+        }
+
     }
 }
 

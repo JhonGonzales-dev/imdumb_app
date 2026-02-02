@@ -1,0 +1,2 @@
+C:/Users/jgonzalesp/Documents/CODE/imdumb_app/android/app/.cxx/RelWithDebInfo/2jt2d1a5/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/jgonzalesp/Documents/CODE/imdumb_app/android/app/.cxx/RelWithDebInfo/2jt2d1a5/arm64-v8a/CMakeFiles/rebuild_cache.dir
