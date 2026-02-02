@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:imdumb/core/config/app_config.dart';
+import 'package:imdumb/core/utils/extension.dart';
 import 'package:imdumb/domain/entities/movie_category.dart';
 import 'package:imdumb/presentation/providers/movie/movie_state.dart';
 import '../../core/utils/constant.dart';
@@ -53,6 +55,12 @@ class _HomePageState extends ConsumerState<HomePage> {
             orElse: () => 'IMDUMB',
             success: (config) => config.initialMessage,
           )),
+          actions: [
+            SvgPicture.asset(
+              '${config.flavorMode.assetsPath}/logo.svg',
+              fit: BoxFit.contain,
+            )
+          ],
         ),
         body: categoryList.isEmpty
             ? const Center(child: CircularProgressIndicator())

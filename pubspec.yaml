@@ -47,6 +47,7 @@ dependencies:
   shared_preferences: ^2.5.3
   dio: ^5.9.0
   flutter_dotenv: ^6.0.0
+  flutter_svg: ^2.2.2
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env
+    - path : assets/production/
+      flavors: 
+      - production
+
+    - path : assets/staging/
+      flavors: 
+      - staging
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -87,7 +95,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: AppFont
+      fonts:
+        - asset: assets/production/font/roboto/Roboto-Medium.ttf
+
+    - family: Pinky
+      fonts:
+        - asset: assets/staging/font/pinky_burst/Pinky-Burst.ttf
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
