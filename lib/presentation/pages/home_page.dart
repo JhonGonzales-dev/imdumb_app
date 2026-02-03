@@ -20,6 +20,7 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> {
   List<CategoryEntity> categoryList = [];
+  
 
   int currentSlideMovie = 0;
 
@@ -27,6 +28,31 @@ class _HomePageState extends ConsumerState<HomePage> {
   void initState() {
     ref.read(movieProvider.notifier).loadCategoryMovie();
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(covariant HomePage oldWidget) {
+
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 
   @override
